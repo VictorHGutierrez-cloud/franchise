@@ -3,9 +3,618 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Factorial Franchise & Partner Program - AI-First HR Platform | Autonomous Business Unit</title>
-  <meta name="description" content="Join Factorial's franchise and partner program. Build a scalable, high-margin revenue line powered by AI-first HR automation. Not a referral program—an autonomous business unit.">
-  <link rel="stylesheet" href="css/style.css">
+  <title>Factorial Partner Program - AI-First HR Platform | Autonomous Business Unit</title>
+  <meta name="description" content="Join Factorial's expert partner program. Build a scalable, high-margin revenue line powered by AI-first HR automation. Not a referral program—an autonomous business unit.">
+  
+  <style>
+    /* FONTS */
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+
+    /* RESET */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    /* FACTORIAL COLOR SYSTEM */
+    :root {
+      /* PRIMARY - Radical Red */
+      --primary: #FF355E;
+      --primary-dark: #E51943;
+      --primary-light: #FF6B85;
+      --primary-lightest: #FFE5EA;
+      
+      /* SECONDARY - Tangerine */
+      --secondary: #FF9153;
+      --secondary-dark: #E5732F;
+      --secondary-light: #FFB085;
+      --secondary-lightest: #FFF0E8;
+      
+      /* NEUTRALS */
+      --white: #FFFFFF;
+      --gray-5: #F4F4F5;
+      --gray-10: #ECECF1;
+      --gray-20: #D1D1DA;
+      --gray-40: #A6A6B3;
+      --gray-60: #7A7A8D;
+      --gray-80: #515164;
+      --gray-100: #25253D;
+      --gray-120: #1A1A31;
+      
+      /* SPACING */
+      --space-xs: 8px;
+      --space-sm: 16px;
+      --space-md: 24px;
+      --space-lg: 32px;
+      --space-xl: 48px;
+      --space-2xl: 64px;
+      --space-3xl: 96px;
+      --space-4xl: 128px;
+      
+      /* SHADOWS */
+      --shadow-sm: 0px -8px 16px rgba(40, 40, 61, 0.05), 0px 16px 24px rgba(40, 40, 61, 0.05);
+      --shadow-md: 0px -8px 24px rgba(40, 40, 61, 0.08), 0px 24px 32px rgba(40, 40, 61, 0.08);
+      --shadow-lg: 0px -8px 32px rgba(40, 40, 61, 0.1), 0px 32px 48px rgba(40, 40, 61, 0.1);
+    }
+
+    /* BASE STYLES */
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--gray-100);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    a { color: var(--primary); text-decoration: none; transition: all 0.2s; }
+    a:hover { color: var(--primary-dark); }
+
+    /* TYPOGRAPHY */
+    h1, h2, h3, h4, h5, h6 { font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; color: var(--gray-120); }
+    h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: var(--space-md); }
+    h2 { font-size: clamp(1.75rem, 4vw, 2.75rem); margin-bottom: var(--space-sm); }
+    h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); margin-bottom: var(--space-sm); }
+    h4 { font-size: 1.25rem; }
+    p { margin-bottom: var(--space-sm); color: var(--gray-80); }
+
+    /* CONTAINER */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 var(--space-lg);
+    }
+
+    @media (max-width: 768px) {
+      .container { padding: 0 var(--space-sm); }
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-sm);
+      padding: var(--space-sm) 0;
+    }
+
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+
+    nav { display: flex; gap: var(--space-lg); align-items: center; }
+    
+    @media (max-width: 768px) {
+      nav { display: none; }
+    }
+
+    nav a {
+      font-weight: 600;
+      font-size: 0.9375rem;
+      color: var(--gray-100);
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--primary-dark); }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 9999px;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+      text-align: center;
+      letter-spacing: -0.01em;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(255, 53, 94, 0.3);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+
+    .btn-secondary:hover {
+      background: var(--primary-lightest);
+      border-color: var(--primary-dark);
+      color: var(--primary-dark);
+    }
+
+    .btn-sm { padding: 10px 20px; font-size: 0.875rem; }
+
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(135deg, var(--primary-lightest) 0%, var(--white) 100%);
+      padding: var(--space-4xl) 0 var(--space-3xl);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(255, 53, 94, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: var(--white);
+      color: var(--primary);
+      padding: 8px 20px;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: var(--space-md);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero h1 {
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: var(--space-md);
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+      color: var(--gray-80);
+      max-width: 700px;
+      margin: 0 auto var(--space-md);
+    }
+
+    .hero-quote {
+      font-style: italic;
+      font-size: 1.125rem;
+      color: var(--gray-60);
+      max-width: 650px;
+      margin: 0 auto var(--space-xl);
+      padding: var(--space-md);
+      border-left: 4px solid var(--primary);
+      background: var(--white);
+      border-radius: 8px;
+      text-align: left;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: var(--space-sm);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* STATS SECTION */
+    .stats {
+      background: var(--gray-5);
+      padding: var(--space-2xl) 0;
+      margin-top: calc(-1 * var(--space-lg));
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-md);
+    }
+
+    .stat-card {
+      background: var(--white);
+      padding: var(--space-lg);
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: var(--space-xs);
+    }
+
+    .stat-label {
+      font-size: 0.875rem;
+      color: var(--gray-60);
+      font-weight: 500;
+    }
+
+    /* SECTION STYLES */
+    section {
+      padding: var(--space-3xl) 0;
+    }
+
+    section:nth-child(even) {
+      background: var(--gray-5);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto var(--space-2xl);
+    }
+
+    .section-tag {
+      display: inline-block;
+      background: var(--primary-lightest);
+      color: var(--primary);
+      padding: 6px 16px;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: var(--space-sm);
+    }
+
+    /* GRID LAYOUTS */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-lg);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-md);
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: var(--space-md);
+    }
+
+    /* CARDS */
+    .card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: var(--space-lg);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s;
+      border: 1px solid var(--gray-10);
+      height: 100%;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary-lightest);
+    }
+
+    .card h3 {
+      color: var(--gray-120);
+      margin-bottom: var(--space-sm);
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+    }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .card li {
+      padding: var(--space-xs) 0;
+      color: var(--gray-80);
+      line-height: 1.6;
+    }
+
+    .card li::before {
+      content: '✓';
+      color: var(--primary);
+      font-weight: 700;
+      margin-right: var(--space-xs);
+    }
+
+    /* TIER CARDS */
+    .tier-card {
+      background: var(--white);
+      border: 2px solid var(--gray-20);
+      border-radius: 20px;
+      padding: var(--space-xl);
+      text-align: center;
+      position: relative;
+      transition: all 0.3s;
+    }
+
+    .tier-card:hover {
+      border-color: var(--primary);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .tier-card.featured {
+      border-color: var(--primary);
+      border-width: 3px;
+      background: linear-gradient(135deg, var(--primary-lightest) 0%, var(--white) 100%);
+      transform: scale(1.05);
+    }
+
+    .tier-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary);
+      color: var(--white);
+      padding: 6px 18px;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .tier-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--gray-120);
+      margin-bottom: var(--space-xs);
+    }
+
+    .tier-price {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: var(--space-sm) 0;
+    }
+
+    .tier-label {
+      font-size: 0.875rem;
+      color: var(--gray-60);
+      margin-bottom: var(--space-md);
+    }
+
+    .tier-features {
+      list-style: none;
+      padding: 0;
+      margin: var(--space-md) 0;
+      text-align: left;
+    }
+
+    .tier-features li {
+      padding: var(--space-xs) 0;
+      color: var(--gray-80);
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-xs);
+    }
+
+    .tier-features li::before {
+      content: '✓';
+      color: var(--primary);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* TABLES */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: var(--space-lg) 0;
+      border-radius: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--white);
+    }
+
+    thead {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    th {
+      padding: var(--space-sm) var(--space-md);
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.875rem;
+      letter-spacing: 0.02em;
+    }
+
+    td {
+      padding: var(--space-sm) var(--space-md);
+      border-bottom: 1px solid var(--gray-10);
+      color: var(--gray-100);
+    }
+
+    tr:hover {
+      background: var(--gray-5);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* HIGHLIGHT BOX */
+    .highlight {
+      background: var(--primary-lightest);
+      border-left: 4px solid var(--primary);
+      padding: var(--space-md);
+      border-radius: 8px;
+      margin: var(--space-md) 0;
+    }
+
+    .highlight strong {
+      color: var(--primary);
+    }
+
+    /* CTA SECTION */
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: var(--white);
+      padding: var(--space-3xl) 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .cta-section .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-section h2 {
+      color: var(--white);
+      margin-bottom: var(--space-md);
+    }
+
+    .cta-section p {
+      font-size: 1.125rem;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 600px;
+      margin: 0 auto var(--space-xl);
+    }
+
+    .cta-section .btn-primary {
+      background: var(--white);
+      color: var(--primary);
+    }
+
+    .cta-section .btn-primary:hover {
+      background: var(--gray-5);
+      transform: translateY(-2px);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--gray-120);
+      color: var(--white);
+      padding: var(--space-2xl) 0 var(--space-lg);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-xl);
+      margin-bottom: var(--space-xl);
+    }
+
+    footer h4 {
+      color: var(--white);
+      margin-bottom: var(--space-sm);
+      font-size: 1.125rem;
+    }
+
+    footer ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    footer li {
+      margin-bottom: var(--space-xs);
+    }
+
+    footer a {
+      color: var(--gray-20);
+      font-size: 0.9375rem;
+    }
+
+    footer a:hover {
+      color: var(--secondary);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: var(--space-lg);
+      border-top: 1px solid var(--gray-80);
+      color: var(--gray-40);
+      font-size: 0.875rem;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    /* UTILITIES */
+    .text-center { text-align: center; }
+    .text-primary { color: var(--primary); }
+    .bg-primary { background: var(--primary); color: var(--white); }
+    .mt-lg { margin-top: var(--space-lg); }
+    .mb-lg { margin-bottom: var(--space-lg); }
+  </style>
 </head>
 <body>
   
@@ -13,11 +622,10 @@
   <header>
     <div class="container">
       <div class="logo">
-        <span>Factorial Franchise Program</span>
+        <span>Factorial Partner Program</span>
       </div>
       <nav>
         <a href="#introduction">Introduction</a>
-        <a href="#franchise-model">Franchise Model</a>
         <a href="#opportunity">Opportunity</a>
         <a href="#model">Business Model</a>
         <a href="#partner">Become a Partner</a>
@@ -31,8 +639,7 @@
   <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <div class="hero-tag">Franchise Opportunity</div>
-      <div class="hero-badge">Partner Program</div>
+      <div class="hero-tag">🤖 AI-First Platform</div>
       <h1>Build an Autonomous Business Unit Powered by AI</h1>
       <p class="hero-subtitle">SMBs across North America are modernizing operations at unprecedented speed. Join Factorial's expert partner program and monetize the $1T+ automation opportunity.</p>
       <div class="hero-quote">
@@ -76,43 +683,6 @@
     </div>
   </section>
 
-  <!-- FRANCHISE MODEL -->
-  <section id="franchise-model">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">The Model</span>
-        <h2>Franchise & Partner Program</h2>
-        <p>This is not a referral program. It's a complete franchise model that enables you to build an autonomous, scalable business unit.</p>
-      </div>
-      
-      <div class="grid-2 mt-lg">
-        <div class="card">
-          <h3>What Makes This a Franchise</h3>
-          <ul>
-            <li>Complete business model with proven playbook</li>
-            <li>Exclusive territory rights in your market</li>
-            <li>Full training and ongoing support system</li>
-            <li>Branded materials and marketing assets</li>
-            <li>Recurring revenue model with predictable returns</li>
-            <li>Scalable operations framework</li>
-          </ul>
-        </div>
-        
-        <div class="card">
-          <h3>Partner Benefits</h3>
-          <ul>
-            <li>Operate as an independent business unit</li>
-            <li>Access to Factorial's comprehensive HR platform</li>
-            <li>Proven sales and marketing methodologies</li>
-            <li>Technical support and platform updates</li>
-            <li>Community of successful franchise partners</li>
-            <li>Long-term growth potential</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- FACTORIAL VALUE PILLARS -->
   <section class="stats">
     <div class="container">
@@ -123,32 +693,32 @@
       </div>
       <div class="stats-grid">
         <div class="stat-card">
-          <img src="assets/time-tracking.PNG" alt="Time Tracking & Attendance" class="feature-image">
+          <div class="stat-number">⏱️</div>
           <div class="stat-label">Time Tracking & Attendance</div>
           <p>Automated time management eliminates administrative burdens and provides real-time insights</p>
         </div>
         <div class="stat-card">
-          <img src="assets/payroll.PNG" alt="Payroll Automation" class="feature-image">
+          <div class="stat-number">💰</div>
           <div class="stat-label">Payroll Automation</div>
           <p>Streamlined payroll processing ensures accuracy and compliance</p>
         </div>
         <div class="stat-card">
-          <img src="assets/talent-management.PNG" alt="Talent Management" class="feature-image">
+          <div class="stat-number">👥</div>
           <div class="stat-label">Talent Management</div>
           <p>Comprehensive talent management tools from recruitment to performance</p>
         </div>
         <div class="stat-card">
-          <img src="assets/finance.PNG" alt="Finance & Expenses" class="feature-image">
+          <div class="stat-number">📊</div>
           <div class="stat-label">Finance & Expenses</div>
           <p>Integrated finance management and expense tracking in one platform</p>
         </div>
         <div class="stat-card">
-          <img src="assets/document-management.PNG" alt="Document Management" class="feature-image">
+          <div class="stat-number">📄</div>
           <div class="stat-label">Document Management</div>
           <p>Centralized document storage with electronic signature capabilities</p>
         </div>
         <div class="stat-card">
-          <img src="assets/ai-agent.PNG" alt="AI Business Agent" class="feature-image">
+          <div class="stat-number">🤖</div>
           <div class="stat-label">AI Business Agent</div>
           <p>Meet One—your AI business agent that delivers instant, accurate answers grounded in company data</p>
         </div>
@@ -264,15 +834,15 @@
       </div>
 
       <div class="card mt-lg">
-        <h3>Scalability Factors</h3>
+        <h3>📊 Scalability Factors</h3>
         <div class="grid-2">
           <div>
             <h4>Demand Generation (Replicable)</h4>
             <ul>
-              <li>Outbound campaigns with proven conversion rates</li>
-              <li>Webinar programs and templates</li>
-              <li>Event execution playbook</li>
-              <li>Paid advertising strategies</li>
+              <li>Outbound: €2,000/year → 54 demos</li>
+              <li>Webinars: €2,400/year → 12 demos</li>
+              <li>Events: €32,500/year → 75 demos</li>
+              <li>Paid Ads: €12,000/year → 24-72 demos</li>
             </ul>
           </div>
           <div>
@@ -301,17 +871,16 @@
 
       <div class="grid-2">
         <div class="card">
-          <h3>Financial Capacity</h3>
+          <h3>💼 Financial Capacity</h3>
           <ul>
-            <li>Minimum investment: €105,280 - €140,280 (entry fee)</li>
-            <li>Total Year 1 investment: €454,860 - €489,860</li>
+            <li>Minimum investment: €119,500 - €295,000</li>
             <li>Access to working capital for 12 months</li>
             <li>Commitment to team hiring (2-3 FTEs)</li>
           </ul>
         </div>
 
         <div class="card">
-          <h3>Market Access</h3>
+          <h3>🌍 Market Access</h3>
           <ul>
             <li>Established business network in target market</li>
             <li>Knowledge of local HR/business landscape</li>
@@ -320,7 +889,7 @@
         </div>
 
         <div class="card">
-          <h3>Operational Capability</h3>
+          <h3>⚙️ Operational Capability</h3>
           <ul>
             <li>Ability to hire & manage sales team (1 SDR, 1-2 AEs)</li>
             <li>Ability to hire OB/CX Specialist</li>
@@ -330,7 +899,7 @@
         </div>
 
         <div class="card">
-          <h3>Personal Attributes</h3>
+          <h3>👤 Personal Attributes</h3>
           <ul>
             <li>Entrepreneurial mindset with execution focus</li>
             <li>Coachable & willing to follow proven systems</li>
@@ -354,15 +923,14 @@
       <div class="grid-3">
         <div class="tier-card">
           <h3 class="tier-name">Single Market</h3>
-          <div class="tier-price">€105,280</div>
+          <div class="tier-price">€119,500</div>
           <p class="tier-label">Entry Fee</p>
           <ul class="tier-features">
             <li>Access to 1 North American market</li>
             <li>Full playbook & training</li>
             <li>Marketing materials</li>
             <li>Ongoing support</li>
-            <li>Total Year 1 Investment: €454,860</li>
-            <li style="color: var(--gray-60); font-size: 0.875rem;">*Based on CAC ROW analysis</li>
+            <li>Expected Year 1 ROI: 24.1%</li>
           </ul>
           <a href="#contact" class="btn btn-secondary">Learn More</a>
         </div>
@@ -370,37 +938,35 @@
         <div class="tier-card featured">
           <div class="tier-badge">Most Popular</div>
           <h3 class="tier-name">Multi-Market</h3>
-          <div class="tier-price">€120,280</div>
+          <div class="tier-price">€195,000</div>
           <p class="tier-label">Entry Fee</p>
           <ul class="tier-features">
             <li>Access to 3-5 North American markets</li>
             <li>Enhanced territory rights</li>
             <li>Priority support</li>
             <li>Multi-market playbook</li>
-            <li>Total Year 1 Investment: €469,860</li>
-            <li style="color: var(--gray-60); font-size: 0.875rem;">*Based on CAC ROW analysis</li>
+            <li>Expected 3-Year ROI: 49.5%</li>
           </ul>
           <a href="#contact" class="btn btn-primary">Get Started</a>
         </div>
 
         <div class="tier-card">
           <h3 class="tier-name">Regional</h3>
-          <div class="tier-price">€140,280</div>
+          <div class="tier-price">€295,000</div>
           <p class="tier-label">Entry Fee</p>
           <ul class="tier-features">
             <li>Exclusive rights to entire North American region</li>
             <li>Master partner opportunity</li>
             <li>Sub-partner capabilities</li>
             <li>Full market exclusivity</li>
-            <li>Total Year 1 Investment: €489,860</li>
-            <li style="color: var(--gray-60); font-size: 0.875rem;">*Based on CAC ROW analysis</li>
+            <li>Maximum growth potential</li>
           </ul>
           <a href="#contact" class="btn btn-secondary">Contact Us</a>
         </div>
       </div>
 
       <div class="mt-lg">
-        <h3 class="text-center mb-lg">Commission Structure</h3>
+        <h3 class="text-center mb-lg">💼 Commission Structure</h3>
         <div class="grid-2">
           <div class="card">
             <h4>Sales Commissions</h4>
@@ -425,7 +991,7 @@
       </div>
 
       <div class="card mt-lg">
-        <h3>Investment Breakdown</h3>
+        <h3>📋 CapEx Breakdown (Single Market Example)</h3>
         <div class="table-wrapper">
           <table>
             <thead>
@@ -437,19 +1003,19 @@
             </thead>
             <tbody>
               <tr>
-                <td><strong>Team</strong></td>
-                <td>Required</td>
-                <td>Sales, onboarding, and customer success team</td>
+                <td><strong>Headcount</strong></td>
+                <td>€170,600</td>
+                <td>1 SDR (€46,250), 1 AE (€84,600), 1 OB/AM (€39,750)</td>
               </tr>
               <tr>
                 <td><strong>Demand Generation</strong></td>
-                <td>Required</td>
-                <td>Marketing and lead generation activities</td>
+                <td>€48,700</td>
+                <td>Events, Paid Ads, Webinars, Outbound</td>
               </tr>
               <tr>
                 <td><strong>Total Investment</strong></td>
-                <td><strong>Varies by tier</strong></td>
-                <td>Entry fee + Year 1 operational costs</td>
+                <td><strong>€219,300</strong></td>
+                <td>Year 1 operational costs</td>
               </tr>
             </tbody>
           </table>
@@ -468,73 +1034,108 @@
       </div>
 
       <div class="highlight">
-        <h3>Financial Highlights</h3>
+        <h3>📊 Executive Financial Summary</h3>
         <div class="grid-2">
           <div>
-            <p><strong>Investment Range:</strong> €454,860 - €489,860 (Year 1)</p>
-            <p><strong>Operating Investment:</strong> €299,580/year</p>
-            <p><strong>CAC ROW:</strong> €15,194 per customer</p>
-            <p style="color: var(--gray-60); font-size: 0.875rem; margin-top: var(--space-sm);">*Values adjusted based on ROW CAC analysis</p>
+            <p><strong>Total Revenue (Year 1):</strong> €263,350</p>
+            <p><strong>Total Investment:</strong> -€219,300</p>
+            <p><strong>Net Cashflow:</strong> €44,050</p>
           </div>
           <div>
-            <p><strong>Recurring Revenue Model:</strong> Predictable monthly income</p>
-            <p><strong>Scalable Growth:</strong> Expand across multiple markets</p>
-            <p><strong>Proven Track Record:</strong> Validated business model</p>
-            <p><strong>Revenue Streams:</strong> Commissions, fees, bonuses</p>
+            <p><strong>ROI (Year 1):</strong> 24.1%</p>
+            <p><strong>Payback Period:</strong> ~10 months</p>
+            <p><strong>3-Year ROI:</strong> 49.5%</p>
           </div>
         </div>
       </div>
 
       <div class="mt-lg">
-        <h3 class="text-center mb-lg">Investment Overview by Tier</h3>
+        <h3 class="text-center mb-lg">💎 ROI by Tier (3-Year Projection)</h3>
         <div class="grid-3">
           <div class="card">
             <h4>Single Market</h4>
-            <p style="font-size: 2rem; font-weight: 700; color: var(--primary); margin: var(--space-sm) 0;">€454,860</p>
-            <p style="color: var(--gray-60); font-size: 0.875rem;">Total Year 1 Investment</p>
-            <p style="margin-top: var(--space-sm); font-size: 0.875rem;">Entry Fee: €105,280<br>Operating: €299,580<br>Working Capital: €50,000</p>
-            <p style="color: var(--gray-60); font-size: 0.75rem; margin-top: var(--space-xs);">*Based on CAC ROW (€15,194)</p>
+            <p style="font-size: 2rem; font-weight: 700; color: var(--primary); margin: var(--space-sm) 0;">49.5%</p>
+            <p style="color: var(--gray-60); font-size: 0.875rem;">3-Year Cumulative ROI</p>
+            <p style="margin-top: var(--space-sm); font-size: 0.875rem;">Investment: €119,500<br>Net Profit (3Y): €59,200</p>
           </div>
 
           <div class="card">
             <h4>Multi-Market</h4>
-            <p style="font-size: 2rem; font-weight: 700; color: var(--primary); margin: var(--space-sm) 0;">€469,860</p>
-            <p style="color: var(--gray-60); font-size: 0.875rem;">Total Year 1 Investment</p>
-            <p style="margin-top: var(--space-sm); font-size: 0.875rem;">Entry Fee: €120,280<br>Operating: €299,580<br>Working Capital: €50,000</p>
-            <p style="color: var(--gray-60); font-size: 0.75rem; margin-top: var(--space-xs);">*Based on CAC ROW (€15,194)</p>
+            <p style="font-size: 2rem; font-weight: 700; color: var(--primary); margin: var(--space-sm) 0;">46.5%</p>
+            <p style="color: var(--gray-60); font-size: 0.875rem;">3-Year Cumulative ROI</p>
+            <p style="margin-top: var(--space-sm); font-size: 0.875rem;">Investment: €195,000<br>Net Profit (3Y): €90,700</p>
           </div>
 
           <div class="card">
             <h4>Regional</h4>
-            <p style="font-size: 2rem; font-weight: 700; color: var(--primary); margin: var(--space-sm) 0;">€489,860</p>
-            <p style="color: var(--gray-60); font-size: 0.875rem;">Total Year 1 Investment</p>
-            <p style="margin-top: var(--space-sm); font-size: 0.875rem;">Entry Fee: €140,280<br>Operating: €299,580<br>Working Capital: €50,000</p>
-            <p style="color: var(--gray-60); font-size: 0.75rem; margin-top: var(--space-xs);">*Based on CAC ROW (€15,194)</p>
+            <p style="font-size: 2rem; font-weight: 700; color: var(--primary); margin: var(--space-sm) 0;">42.7%</p>
+            <p style="color: var(--gray-60); font-size: 0.875rem;">3-Year Cumulative ROI</p>
+            <p style="margin-top: var(--space-sm); font-size: 0.875rem;">Investment: €295,000<br>Net Profit (3Y): €126,100</p>
           </div>
         </div>
       </div>
 
+      <div class="card mt-lg">
+        <h3>📈 Revenue Breakdown (Year 1)</h3>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Revenue Stream</th>
+                <th>Amount</th>
+                <th>% of Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sales Commissions (35% ARR)</td>
+                <td>€147,000</td>
+                <td>55.8%</td>
+              </tr>
+              <tr>
+                <td>Support Commissions (20% ARR)</td>
+                <td>€84,000</td>
+                <td>31.9%</td>
+              </tr>
+              <tr>
+                <td>Bonus & Incentives</td>
+                <td>€59,350</td>
+                <td>22.5%</td>
+              </tr>
+              <tr>
+                <td>Onboarding Fees (€3K × 25)</td>
+                <td>€75,000</td>
+                <td>28.5%</td>
+              </tr>
+              <tr style="background: var(--primary-lightest); font-weight: 600;">
+                <td><strong>Total Revenue</strong></td>
+                <td><strong>€263,350</strong></td>
+                <td><strong>100%</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
       <div class="grid-2 mt-lg">
         <div class="card">
-          <h3>Break-Even Timeline</h3>
+          <h3>⏱️ Break-Even Analysis</h3>
           <ul>
-            <li><strong>Months 1-4:</strong> Ramp-up and investment phase</li>
-            <li><strong>Months 5-6:</strong> Approaching break-even</li>
-            <li><strong>Months 7+:</strong> Positive cashflow</li>
+            <li><strong>Month 1-4:</strong> Net negative (ramp-up phase)</li>
+            <li><strong>Month 5-6:</strong> Approaching break-even</li>
+            <li><strong>Month 7+:</strong> Positive cashflow</li>
             <li><strong>Month 10:</strong> Full investment recovered</li>
-            <li><strong>Year 1:</strong> Profitable operation</li>
+            <li><strong>Month 12:</strong> €44,050 net profit</li>
           </ul>
         </div>
 
         <div class="card">
-          <h3>Growth Potential</h3>
+          <h3>🎯 Sensitivity Analysis</h3>
           <ul>
-            <li>Scalable customer acquisition model</li>
-            <li>Recurring revenue increases over time</li>
-            <li>Multiple revenue streams (commissions, fees, bonuses)</li>
-            <li>Expansion opportunities across markets</li>
-            <li>Long-term partnership benefits</li>
+            <li><strong>20 Customers:</strong> ROI 8.3%, Net €24,500</li>
+            <li><strong>25 Customers (Target):</strong> ROI 24.1%, Net €71,050</li>
+            <li><strong>30 Customers:</strong> ROI 51.4%, Net €147,900</li>
+            <li>Every additional customer adds €6,200 net profit</li>
           </ul>
         </div>
       </div>
@@ -564,7 +1165,7 @@
 
       <div class="grid-2">
         <div class="card">
-          <h3>Sales Enablement</h3>
+          <h3>📚 Sales Enablement</h3>
           <ul>
             <li>SDR Sales Academy (full curriculum)</li>
             <li>AE Sales Academy (advanced training)</li>
@@ -576,7 +1177,7 @@
         </div>
 
         <div class="card">
-          <h3>Pipeline Management</h3>
+          <h3>📊 Pipeline Management</h3>
           <ul>
             <li>CRM setup & configuration</li>
             <li>Pipeline stages (Demo → Won)</li>
@@ -588,7 +1189,7 @@
         </div>
 
         <div class="card">
-          <h3>Demand Generation</h3>
+          <h3>🎯 Demand Generation</h3>
           <ul>
             <li>Outbound campaigns & sequences</li>
             <li>Webinar playbook & templates</li>
@@ -600,7 +1201,7 @@
         </div>
 
         <div class="card">
-          <h3>Onboarding & Customer Success</h3>
+          <h3>💼 Onboarding & CX</h3>
           <ul>
             <li>Customer onboarding checklist</li>
             <li>Implementation timelines (4-6 weeks)</li>
@@ -613,30 +1214,55 @@
       </div>
 
       <div class="card mt-lg">
-        <h3>Key Performance Indicators</h3>
-        <div class="grid-2">
-          <div>
-            <h4>Sales Metrics</h4>
-            <ul>
-              <li>Demos delivered monthly</li>
-              <li>Conversion rates</li>
-              <li>Customer acquisition</li>
-            </ul>
-          </div>
-          <div>
-            <h4>Growth Metrics</h4>
-            <ul>
-              <li>Recurring revenue growth</li>
-              <li>Customer retention</li>
-              <li>Market expansion</li>
-            </ul>
-          </div>
+        <h3>🔑 Key Performance Indicators (KPIs)</h3>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>KPI</th>
+                <th>Target</th>
+                <th>Tracking Frequency</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Demos Delivered</td>
+                <td>18-20/month</td>
+                <td>Weekly</td>
+              </tr>
+              <tr>
+                <td>Demo → Customer Conversion</td>
+                <td>18%</td>
+                <td>Monthly</td>
+              </tr>
+              <tr>
+                <td>Won Customers</td>
+                <td>2-3/month</td>
+                <td>Weekly</td>
+              </tr>
+              <tr>
+                <td>MRR Growth</td>
+                <td>€2,900/month average</td>
+                <td>Monthly</td>
+              </tr>
+              <tr>
+                <td>Customer Retention</td>
+                <td>&gt;95%</td>
+                <td>Monthly</td>
+              </tr>
+              <tr>
+                <td>ARPU</td>
+                <td>€1,200</td>
+                <td>Monthly</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
       <div class="grid-2 mt-lg">
         <div class="card">
-          <h3>Team Structure</h3>
+          <h3>📅 Team Structure</h3>
           <ul>
             <li><strong>Account Executive (AE):</strong> 1-2 FTEs</li>
             <li><strong>Sales Development Rep (SDR):</strong> 1 FTE</li>
@@ -647,12 +1273,12 @@
         </div>
 
         <div class="card">
-          <h3>Key Milestones & Timeline</h3>
+          <h3>🗓️ Key Milestones & Timeline</h3>
           <ul>
             <li><strong>Month 1:</strong> Team hiring & training</li>
             <li><strong>Month 2:</strong> Demand gen ramp-up</li>
-            <li><strong>Months 3-6:</strong> Pipeline building and customer acquisition</li>
-            <li><strong>Months 7-12:</strong> Revenue acceleration and growth</li>
+            <li><strong>Month 3-6:</strong> Pipeline building (54-110 demos)</li>
+            <li><strong>Month 7-12:</strong> Revenue acceleration</li>
             <li><strong>Month 10:</strong> Break-even & profitability</li>
           </ul>
         </div>
@@ -663,7 +1289,7 @@
   <!-- QUARTERLY TARGETS -->
   <section>
     <div class="container">
-      <h2 class="text-center mb-lg">Quarterly Milestones</h2>
+      <h2 class="text-center mb-lg">🗓️ Quarterly Milestones (2026)</h2>
       <div class="grid-2">
         <div class="card">
           <h3>Q1: Foundation</h3>
@@ -671,17 +1297,17 @@
             <li>Team hired & trained</li>
             <li>Demand gen campaigns launched</li>
             <li>Roadshow executed (February)</li>
-            <li><strong>Focus:</strong> Foundation and initial customer acquisition</li>
+            <li><strong>Target:</strong> 3 won customers, €7,350 MRR</li>
           </ul>
         </div>
 
         <div class="card">
           <h3>Q2: Acceleration</h3>
           <ul>
-            <li>Pipeline scaling and growth</li>
+            <li>Pipeline scaling (60+ demos)</li>
             <li>TIC Event (June)</li>
             <li>Paid ads optimized</li>
-            <li><strong>Focus:</strong> Pipeline scaling and market expansion</li>
+            <li><strong>Target:</strong> 6 won customers, €8,750 MRR</li>
           </ul>
         </div>
 
@@ -691,7 +1317,7 @@
             <li>Human Tech Expo (October)</li>
             <li>Retention focus</li>
             <li>Upsell campaigns</li>
-            <li><strong>Focus:</strong> Retention and growth acceleration</li>
+            <li><strong>Target:</strong> 8 won customers, €9,800 MRR</li>
           </ul>
         </div>
 
@@ -701,7 +1327,7 @@
             <li>Year-end push</li>
             <li>Renewal campaigns</li>
             <li>2027 planning</li>
-            <li><strong>Focus:</strong> Year-end optimization and planning</li>
+            <li><strong>Target:</strong> 8 won customers, €9,100 MRR</li>
           </ul>
         </div>
       </div>
@@ -719,17 +1345,17 @@
 
       <div class="grid-2 mt-lg">
         <div class="card">
-          <h3>Contact Information</h3>
+          <h3>📞 Contact Information</h3>
           <ul>
-            <li><strong>Partner Program Lead:</strong> leon.ribeiro@factorial.co</li>
-            <li><strong>General Inquiries:</strong> support@factorial.co</li>
+            <li><strong>Partner Program Lead:</strong> partners@factorial.co</li>
+            <li><strong>General Inquiries:</strong> info@factorial.co</li>
             <li><strong>Website:</strong> <a href="https://factorialhr.com" target="_blank">factorialhr.com</a></li>
           </ul>
           <a href="mailto:partners@factorial.co" class="btn btn-primary" style="margin-top: var(--space-md); display: block;">Email Us</a>
         </div>
 
         <div class="card">
-          <h3>Next Steps</h3>
+          <h3>📋 Next Steps</h3>
           <ol style="list-style: decimal; padding-left: var(--space-md);">
             <li style="margin-bottom: var(--space-xs);">Schedule initial discovery call</li>
             <li style="margin-bottom: var(--space-xs);">Review complete business plan & financials</li>
@@ -747,7 +1373,7 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <h4>Factorial Franchise Program</h4>
+          <h4>Factorial Partner Program</h4>
           <p style="color: var(--gray-40); margin-top: var(--space-sm);">
             AI-first HR platform for North America. Build an autonomous business unit powered by AI Tech.
           </p>
@@ -767,11 +1393,10 @@
         <div>
           <h4>Resources</h4>
           <ul>
-            <li><a href="https://docs.google.com/spreadsheets/d/1ShPbdP0ETMRWg_fbWYgFt1SgH0BX_3IHYw6RR-5mYX8/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Business Plan</a></li>
-            <li><a href="https://www.notion.so/factorialco/SDR-SALES-ACADEMY-1f25e6e051ee8047885ee9785a66ce37" target="_blank" rel="noopener noreferrer">SDR Sales Training</a></li>
-            <li><a href="https://www.notion.so/factorialco/AE-Sales-Academy-2025e6e051ee80b0ae74fa982ccb1b1b" target="_blank" rel="noopener noreferrer">Account Executive Sales Training</a></li>
+            <li><a href="#">Business Plan</a></li>
+            <li><a href="#">Financial Projections</a></li>
             <li><a href="#">Partner Agreement</a></li>
-            <li><a href="https://help.factorialhr.com/en_US" target="_blank" rel="noopener noreferrer">FAQ</a></li>
+            <li><a href="#">FAQ</a></li>
           </ul>
         </div>
 
@@ -786,7 +1411,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2026 Factorial Franchise Program. All rights reserved. | AI-First HR Platform for North America</p>
+        <p>&copy; 2026 Factorial Partner Program. All rights reserved. | AI-First HR Platform for North America</p>
       </div>
     </div>
   </footer>
